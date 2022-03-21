@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E354F0727E8A8C5003CB91A /* FadeOutThenFadeIn.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F0627E8A8C5003CB91A /* FadeOutThenFadeIn.sks */; };
+		8E354F0927E8CCE7003CB91A /* Lidear-App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F0827E8CCE7003CB91A /* Lidear-App-Info.plist */; };
 		8EA0783427E704D6004AB32C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783327E704D6004AB32C /* AppDelegate.swift */; };
 		8EA0783C27E704D6004AB32C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783B27E704D6004AB32C /* MainViewController.swift */; };
 		8EA0783F27E704D6004AB32C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0783D27E704D6004AB32C /* Main.storyboard */; };
@@ -133,6 +134,8 @@
 
 /* Begin PBXFileReference section */
 		8E354F0627E8A8C5003CB91A /* FadeOutThenFadeIn.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FadeOutThenFadeIn.sks; sourceTree = "<group>"; };
+		8E354F0827E8CCE7003CB91A /* Lidear-App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Lidear-App-Info.plist"; sourceTree = "<group>"; };
+		8E354F0A27E8CD18003CB91A /* Lidear App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lidear App.entitlements"; sourceTree = "<group>"; };
 		8EA0783027E704D6004AB32C /* Lidear App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lidear App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0783327E704D6004AB32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA0783B27E704D6004AB32C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 		8EA0783227E704D6004AB32C /* Lidear App */ = {
 			isa = PBXGroup;
 			children = (
+				8E354F0A27E8CD18003CB91A /* Lidear App.entitlements */,
+				8E354F0827E8CCE7003CB91A /* Lidear-App-Info.plist */,
 				8ECC182427E840A20050AE0C /* View Controller Classes */,
 				8EA0783327E704D6004AB32C /* AppDelegate.swift */,
 				8EA0783D27E704D6004AB32C /* Main.storyboard */,
@@ -691,6 +696,7 @@
 				8EA0791F27E71B59004AB32C /* leaves 01.png in Resources */,
 				8EA0790427E71B59004AB32C /* backdrop Observation.png in Resources */,
 				8EA0792F27E71B59004AB32C /* Octopus Big@2x.png in Resources */,
+				8E354F0927E8CCE7003CB91A /* Lidear-App-Info.plist in Resources */,
 				8EA078ED27E71B59004AB32C /* Observation.png in Resources */,
 				8EA0790127E71B59004AB32C /* Backdrop Reactiveness@3x.png in Resources */,
 				8EA0791427E71B59004AB32C /* apple down@2x.png in Resources */,
@@ -953,6 +959,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Lidear App/Lidear App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3G7F4G8M8F;
@@ -966,6 +973,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -973,6 +981,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AliXunLianJi.Lidear-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -984,6 +994,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Lidear App/Lidear App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3G7F4G8M8F;
@@ -997,6 +1008,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1004,6 +1016,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AliXunLianJi.Lidear-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

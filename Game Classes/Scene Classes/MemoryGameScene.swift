@@ -210,7 +210,10 @@ class MemoryGameScene: SKScene {
             // if user touches any box
             if let nodeName = atPoint(location).name, nodeName.starts(with: "box") {
                 guard !answerBoxArray.isEmpty else {
-                    print("!!!!!=========== answerArray见底了 =============!!!!!!")
+                    let alert = UIAlertController(title: "游戏已经结束", message: "游戏已经结束了，请返回上级菜单", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "彳亍", style: .default)
+                    alert.addAction(defaultAction)
+                    self.view?.window?.rootViewController?.present(alert, animated: true)
                     return
                 }
                 
@@ -243,6 +246,7 @@ class MemoryGameScene: SKScene {
                     let defaultAction = UIAlertAction(title: "彳亍", style: .default)
                     alert.addAction(defaultAction)
                     self.view?.window?.rootViewController?.present(alert, animated: true)
+                    answerBoxArray.removeAll()
                 }
                 
             }
