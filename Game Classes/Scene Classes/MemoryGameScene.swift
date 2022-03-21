@@ -20,10 +20,14 @@ private struct boxConfig {
     记忆力训练游戏场景 MemoryGameScene Class
  */
 class MemoryGameScene: SKScene {
-    
+    let animationTime = 0.5 // animationTime refers to the time of a loop of showing and hiding the box
     var boxArray = ["box1", "box2", "box3", "box4", "box5", "box6"]
     var answerBoxArray: [String] = []
-    let fadeOutThenFadeInAction = SKAction.sequence([SKAction.fadeOut(withDuration: TimeInterval(0.2)), SKAction.fadeAlpha(by: 1, duration: TimeInterval(0.2))])
+    let animalScalingAnimation = SKAction.sequence([SKAction.wait(forDuration: TimeInterval(0.1)),
+                                                    SKAction.scale(by: 1.2, duration: TimeInterval(0.025)),
+                                                    SKAction.scale(by: 0.9, duration: TimeInterval(0.05)),
+                                                    SKAction.scale(by: 1.1, duration: TimeInterval(0.05))])
+    let fadeOutThenFadeInAction = SKAction.sequence([SKAction.fadeOut(withDuration: TimeInterval(0.25)), SKAction.fadeAlpha(by: 1, duration: TimeInterval(0.2))])
     
     /**
         Generate a square SKShapeNode with a sets of parameters. The anchor point of the square generated is CGPoint(x: 0, y: 0), namely the center of the SKShapeNode.
@@ -151,6 +155,7 @@ class MemoryGameScene: SKScene {
         // create the animal+yellow box or so-called target box for to be shown
         let targetBox = generateSquare(width: boxConfig.width, color: boxConfig.targetColor, cornerRadius: boxConfig.cornerRadius)
         let animalNode = SKSpriteNode(imageNamed: animalImageName)
+        animalNode.name = "animal"
         targetBox.zPosition = 3
         animalNode.setScale(scale)
         // animalNode is positioned on the targetBox, which adds up animalNodes's zPositon to 3 + 1 = 4
@@ -162,6 +167,7 @@ class MemoryGameScene: SKScene {
     
     // show the order of the boxes for the gamer
     private func demonstrateTheBoxOrder() {
+        
         self.isUserInteractionEnabled = false
         
         
@@ -170,12 +176,14 @@ class MemoryGameScene: SKScene {
         for boxName in answerBoxArray {
             
             
-            // the demonstration animation on each box will be 2 seconds, 1s for fading out, 1s for fading in
+            // the demonstration animation on highlights will be animationTime seconds, 0.25s for fading out, 0.25s for fading in
             // TODO: 2. Change of memory game difficulty by shortening the animation time
-            let demonstrateFadingIOAnimation = SKAction.sequence([SKAction.fadeOut(withDuration: TimeInterval(1)), SKAction.fadeAlpha(by: 1, duration: TimeInterval(1))])
+            let demonstrateFadingIOAnimation = SKAction.sequence([SKAction.fadeAlpha(to: 0.8, duration: TimeInterval(animationTime/2)), SKAction.fadeAlpha(to: 0, duration: TimeInterval(animationTime/2))])
             
-            // create the animal+yellow box or so-called target box for to be shown
-            let targetBox = generateTargetBox(withAnimalImageNamed: "Owl@3x.png", scale: 2.5)
+            // create the highlight mask for to be shown
+            let targetBox = generateSquare(width: boxConfig.width, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: boxConfig.cornerRadius)
+            targetBox.zPosition = 6
+            targetBox.alpha = 0
             
             let currentBox = self.childNode(withName: boxName)
             let currentPosition = currentBox!.position
@@ -184,14 +192,14 @@ class MemoryGameScene: SKScene {
             // add the targetBox to the scene and play the animation
             Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval), repeats: false) { Timer in
                 self.addChild(targetBox)
-                currentBox?.run(demonstrateFadingIOAnimation)
+                targetBox.run(demonstrateFadingIOAnimation)
             }
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval+2.1), repeats: false) { Timer in
+            Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval + 0.5), repeats: false) { Timer in
                 targetBox.removeFromParent()
             }
             
             // delay the next animation by 3s, since every box's animation is 2s (remaining 1s for interval)
-            actionInterval += 3
+            actionInterval += animationTime
             
             
         }
@@ -229,9 +237,9 @@ class MemoryGameScene: SKScene {
                     currentTargetBox.position = self.childNode(withName: currentBox)!.position
                     self.addChild(currentTargetBox)
                     
-                    touchedBox.run(SKAction.fadeOut(withDuration: TimeInterval(0.2)))
+                    touchedBox.run(fadeOutThenFadeInAction)
+                    currentTargetBox.childNode(withName: "animal")?.run(animalScalingAnimation)
                     Timer.scheduledTimer(withTimeInterval: TimeInterval(0.3), repeats: false) { Timer in
-                        touchedBox.removeFromParent()
                         if self.answerBoxArray.isEmpty {
                             let alert = UIAlertController(title: "Success", message: "你赢了！你真是小天才（笑", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "好耶", style: .default)
