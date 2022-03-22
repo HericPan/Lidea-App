@@ -27,6 +27,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="抽象思维-阿狸会拼图">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="LLB-tT-Msr" kind="show" id="EPb-tg-fqQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQI-9N-jdQ">
                                 <rect key="frame" x="385" y="250" width="310" height="70"/>
@@ -101,6 +104,22 @@
             </objects>
             <point key="canvasLocation" x="1522.2222222222222" y="82.962962962962962"/>
         </scene>
+        <!--抽象思维-阿狸会拼图-->
+        <scene sceneID="PGe-Tv-jST">
+            <objects>
+                <viewController id="LLB-tT-Msr" customClass="AbstractThinkingGameViewController" customModule="Lidear_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQD-Og-luW" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FY4-U4-jp4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="抽象思维-阿狸会拼图" id="qXo-F0-HdB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fl0-4Y-VDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2358" y="-623"/>
+        </scene>
         <!--记忆力训练-阿狸练记忆-->
         <scene sceneID="NcI-BY-BsO">
             <objects>
@@ -115,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV7-MD-dbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2308.8888888888887" y="82.222222222222214"/>
+            <point key="canvasLocation" x="2393" y="266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EF6-4Y-a4a">

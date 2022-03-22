@@ -219,10 +219,7 @@ class MemoryGameScene: SKScene {
             // if user touches any box
             if let nodeName = atPoint(location).name, nodeName.starts(with: "box") {
                 guard !answerBoxArray.isEmpty else {
-                    let alert = UIAlertController(title: "游戏已经结束", message: "游戏已经结束了，请返回上级菜单", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "彳亍", style: .default)
-                    alert.addAction(defaultAction)
-                    self.view?.window?.rootViewController?.present(alert, animated: true)
+                    SKSceneAlertManager.instance.gameHasOver(scene: self)
                     return
                 }
                 
@@ -249,19 +246,13 @@ class MemoryGameScene: SKScene {
                     // if is the last right box, the user wins the game
                     Timer.scheduledTimer(withTimeInterval: TimeInterval(0.3), repeats: false) { Timer in
                         if self.answerBoxArray.isEmpty {
-                            let alert = UIAlertController(title: "Success", message: "你赢了！你真是小天才（笑", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "好耶", style: .default)
-                            alert.addAction(defaultAction)
-                            self.view?.window?.rootViewController?.present(alert, animated: true)
+                            SKSceneAlertManager.instance.gameSucceed(scene: self)
                         }
                     }
                     
                     
                 } else {  // the user has chosen the wrong answer
-                    let alert = UIAlertController(title: "Game Over", message: "你选错了，游戏结束", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "彳亍", style: .default)
-                    alert.addAction(defaultAction)
-                    self.view?.window?.rootViewController?.present(alert, animated: true)
+                    SKSceneAlertManager.instance.gameOver(scene: self)
                     answerBoxArray.removeAll()
                 }
                 
