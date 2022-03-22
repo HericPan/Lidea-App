@@ -20,7 +20,7 @@ private struct boxConfig {
     记忆力训练游戏场景 MemoryGameScene Class
  */
 class MemoryGameScene: SKScene {
-    let animationTime = 0.5 // animationTime refers to the time of a loop of showing and hiding the box
+    let animationTime = 1.0 // animationTime refers to the time of a loop of showing and hiding the box
     var boxArray = ["box1", "box2", "box3", "box4", "box5", "box6"]
     var answerBoxArray: [String] = []
     let animalScalingAnimation = SKAction.sequence([SKAction.wait(forDuration: TimeInterval(0.1)),
@@ -178,7 +178,7 @@ class MemoryGameScene: SKScene {
             
             // the demonstration animation on revealing the animal+yellow BG will be animationTime seconds, 0.25s for fading out, 0.25s for fading in
             
-            let demonstrateFadingIOAnimation = SKAction.sequence([ SKAction.fadeAlpha(to: 0, duration: TimeInterval(animationTime/2)),SKAction.fadeAlpha(to: 1, duration: TimeInterval(animationTime/2))])
+            let demonstrateFadingIOAnimation = SKAction.sequence([ SKAction.fadeAlpha(to: 0, duration: TimeInterval(animationTime/3)),SKAction.wait(forDuration: TimeInterval(animationTime/3)),SKAction.fadeAlpha(to: 1, duration: TimeInterval(animationTime/3))])
             
             // create the highlight mask for to be shown
             let targetBox = generateTargetBox(withAnimalImageNamed: "Owl@3x.png", scale: 2.5)
@@ -195,7 +195,7 @@ class MemoryGameScene: SKScene {
             }
             
             // remove the targetBox
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval + 0.5), repeats: false) { Timer in
+            Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval + 1.0), repeats: false) { Timer in
                 targetBox.removeFromParent()
             }
             
@@ -240,7 +240,7 @@ class MemoryGameScene: SKScene {
                     highlightMask.alpha = 0
                     
                     // run highlight mask animation
-                    highlightMask.run(SKAction.sequence([SKAction.fadeAlpha(to: 0.6, duration: TimeInterval(animationTime/2)), SKAction.fadeOut(withDuration: TimeInterval(animationTime/2))]))
+                    highlightMask.run(SKAction.sequence([SKAction.fadeAlpha(to: 0.6, duration: TimeInterval(animationTime/5)), SKAction.fadeOut(withDuration: TimeInterval(animationTime/5))]))
                     
                     
                     // if is the last right box, the user wins the game

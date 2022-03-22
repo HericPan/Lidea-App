@@ -100,9 +100,10 @@ class AbstractGameScene: SKScene {
                         }
                     } else {
                         // if the user placed the item in a wrong location
+                        // for now, this won't give rise to game over
                         currentSelectedNode!.position = originalPositionOfCurrentSelectedNode!
-                        isGameEnded = 0
-                        SKSceneAlertManager.instance.gameOver(scene: self)
+                        // isGameEnded = 0
+                        // SKSceneAlertManager.instance.gameOver(scene: self)
                     }
                 }
                 

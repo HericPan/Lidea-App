@@ -149,7 +149,7 @@ class ResponsivenessGameScene: SKScene {
         } else {
             self.isGameOver = true
             fullyStopAnimation()
-            SKSceneAlertManager.instance.gameOver(scene: self)
+            SKSceneAlertManager.instance.gameOver(scene: self, withMessage: "游戏结束，您点的太迟或太早了")
         }
         
     }
