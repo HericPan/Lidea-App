@@ -26,7 +26,7 @@ class MemoryGameScene: SKScene {
     let animalScalingAnimation = SKAction.sequence([SKAction.wait(forDuration: TimeInterval(0.1)),
                                                     SKAction.scale(by: 1.2, duration: TimeInterval(0.025)),
                                                     SKAction.scale(by: 0.9, duration: TimeInterval(0.05)),
-                                                    SKAction.scale(by: 1.1, duration: TimeInterval(0.05))])
+                                                    SKAction.scale(by: 1, duration: TimeInterval(0.05))])
     let fadeOutThenFadeInAction = SKAction.sequence([SKAction.fadeOut(withDuration: TimeInterval(0.25)), SKAction.fadeAlpha(by: 1, duration: TimeInterval(0.2))])
     
     /**
@@ -44,7 +44,7 @@ class MemoryGameScene: SKScene {
         let rectangle = CGRect(origin: CGPoint(x: -width/2, y: -width/2), size: CGSize(width: width, height: width))
         let roundedSKNode = SKShapeNode(rect: rectangle, cornerRadius: cornerRadius)
         roundedSKNode.fillColor = color
-        roundedSKNode.strokeColor = color
+        roundedSKNode.strokeColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
 
         return roundedSKNode
     }
@@ -176,14 +176,12 @@ class MemoryGameScene: SKScene {
         for boxName in answerBoxArray {
             
             
-            // the demonstration animation on highlights will be animationTime seconds, 0.25s for fading out, 0.25s for fading in
-            // TODO: 2. Change of memory game difficulty by shortening the animation time
-            let demonstrateFadingIOAnimation = SKAction.sequence([SKAction.fadeAlpha(to: 0.8, duration: TimeInterval(animationTime/2)), SKAction.fadeAlpha(to: 0, duration: TimeInterval(animationTime/2))])
+            // the demonstration animation on revealing the animal+yellow BG will be animationTime seconds, 0.25s for fading out, 0.25s for fading in
+            
+            let demonstrateFadingIOAnimation = SKAction.sequence([ SKAction.fadeAlpha(to: 0, duration: TimeInterval(animationTime/2)),SKAction.fadeAlpha(to: 1, duration: TimeInterval(animationTime/2))])
             
             // create the highlight mask for to be shown
-            let targetBox = generateSquare(width: boxConfig.width, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: boxConfig.cornerRadius)
-            targetBox.zPosition = 6
-            targetBox.alpha = 0
+            let targetBox = generateTargetBox(withAnimalImageNamed: "Owl@3x.png", scale: 2.5)
             
             let currentBox = self.childNode(withName: boxName)
             let currentPosition = currentBox!.position
@@ -192,8 +190,11 @@ class MemoryGameScene: SKScene {
             // add the targetBox to the scene and play the animation
             Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval), repeats: false) { Timer in
                 self.addChild(targetBox)
-                targetBox.run(demonstrateFadingIOAnimation)
+                currentBox?.run(demonstrateFadingIOAnimation)
+                targetBox.childNode(withName: "animal")?.run(self.animalScalingAnimation)
             }
+            
+            // remove the targetBox
             Timer.scheduledTimer(withTimeInterval: TimeInterval(actionInterval + 0.5), repeats: false) { Timer in
                 targetBox.removeFromParent()
             }
@@ -233,12 +234,19 @@ class MemoryGameScene: SKScene {
                 // the user has chosen the right answer
                 if currentBox == nodeName {
                     let touchedBox = atPoint(location) as! SKShapeNode
-                    let currentTargetBox = self.generateTargetBox(withAnimalImageNamed: "Owl@3x.png", scale: 2.5)
-                    currentTargetBox.position = self.childNode(withName: currentBox)!.position
-                    self.addChild(currentTargetBox)
                     
-                    touchedBox.run(fadeOutThenFadeInAction)
-                    currentTargetBox.childNode(withName: "animal")?.run(animalScalingAnimation)
+                    // generate the highlight mask above the touchedBox
+                    let highlightMask = generateSquare(width: boxConfig.width, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: boxConfig.cornerRadius)
+                    highlightMask.zPosition = 6
+                    highlightMask.position = touchedBox.position
+                    self.addChild(highlightMask)
+                    highlightMask.alpha = 0
+                    
+                    // run highlight mask animation
+                    highlightMask.run(SKAction.sequence([SKAction.fadeAlpha(to: 0.6, duration: TimeInterval(animationTime/2)), SKAction.fadeOut(withDuration: TimeInterval(animationTime/2))]))
+                    
+                    
+                    // if is the last right box, the user wins the game
                     Timer.scheduledTimer(withTimeInterval: TimeInterval(0.3), repeats: false) { Timer in
                         if self.answerBoxArray.isEmpty {
                             let alert = UIAlertController(title: "Success", message: "你赢了！你真是小天才（笑", preferredStyle: .alert)
@@ -249,7 +257,7 @@ class MemoryGameScene: SKScene {
                     }
                     
                     
-                } else {
+                } else {  // the user has chosen the wrong answer
                     let alert = UIAlertController(title: "Game Over", message: "你选错了，游戏结束", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "彳亍", style: .default)
                     alert.addAction(defaultAction)
