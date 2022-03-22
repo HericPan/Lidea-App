@@ -41,6 +41,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="反应力训练-阿狸会反应">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="0lv-LY-4Rd" kind="show" id="B8u-kr-XGK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsE-aj-HMx">
                                 <rect key="frame" x="385" y="370" width="310" height="70"/>
@@ -118,7 +121,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fl0-4Y-VDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="-623"/>
+            <point key="canvasLocation" x="2393" y="-1539"/>
+        </scene>
+        <!--反应力训练-阿狸会反应-->
+        <scene sceneID="yPn-B2-Yis">
+            <objects>
+                <viewController id="0lv-LY-4Rd" customClass="ResponsivenessGameViewController" customModule="Lidear_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fiL-Dx-4zU" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uIx-h6-2g8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="反应力训练-阿狸会反应" id="POn-fd-6ra"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8g-YH-jjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2387" y="-782"/>
         </scene>
         <!--记忆力训练-阿狸练记忆-->
         <scene sceneID="NcI-BY-BsO">

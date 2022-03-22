@@ -12,6 +12,9 @@
 		8E354F1227E982B2003CB91A /* AbstractGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F1127E982B2003CB91A /* AbstractGameScene.sks */; };
 		8E354F1427E982BB003CB91A /* AbstractGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1327E982BB003CB91A /* AbstractGameScene.swift */; };
 		8E354F1627E9AAF3003CB91A /* SKSceneAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1527E9AAF3003CB91A /* SKSceneAlertManager.swift */; };
+		8E354F1927E9BEEE003CB91A /* ResponsivenessGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */; };
+		8E354F1B27E9BF69003CB91A /* ResponsivenessGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */; };
+		8E354F1D27E9BF75003CB91A /* ResponsivenessGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */; };
 		8EA0783427E704D6004AB32C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783327E704D6004AB32C /* AppDelegate.swift */; };
 		8EA0783C27E704D6004AB32C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783B27E704D6004AB32C /* MainViewController.swift */; };
 		8EA0783F27E704D6004AB32C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0783D27E704D6004AB32C /* Main.storyboard */; };
@@ -37,7 +40,7 @@
 		8EA078FD27E71B59004AB32C /* Owl@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789827E71B59004AB32C /* Owl@3x.png */; };
 		8EA078FF27E71B59004AB32C /* backdrop Observation@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789B27E71B59004AB32C /* backdrop Observation@3x.png */; };
 		8EA0790027E71B59004AB32C /* Backdrop Abstract@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789C27E71B59004AB32C /* Backdrop Abstract@3x.png */; };
-		8EA0790127E71B59004AB32C /* Backdrop Reactiveness@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789D27E71B59004AB32C /* Backdrop Reactiveness@3x.png */; };
+		8EA0790127E71B59004AB32C /* Backdrop Responsiveness@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789D27E71B59004AB32C /* Backdrop Responsiveness@3x.png */; };
 		8EA0790227E71B59004AB32C /* Backdrop Memory@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0789E27E71B59004AB32C /* Backdrop Memory@3x.png */; };
 		8EA0790C27E71B59004AB32C /* Backdrop Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA078A827E71B59004AB32C /* Backdrop Settings@3x.png */; };
 		8EA0790E27E71B59004AB32C /* Butterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA078AB27E71B59004AB32C /* Butterfly.png */; };
@@ -82,6 +85,9 @@
 		8E354F1127E982B2003CB91A /* AbstractGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AbstractGameScene.sks; sourceTree = "<group>"; };
 		8E354F1327E982BB003CB91A /* AbstractGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractGameScene.swift; sourceTree = "<group>"; };
 		8E354F1527E9AAF3003CB91A /* SKSceneAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneAlertManager.swift; sourceTree = "<group>"; };
+		8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivenessGameViewController.swift; sourceTree = "<group>"; };
+		8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivenessGameScene.swift; sourceTree = "<group>"; };
+		8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ResponsivenessGameScene.sks; sourceTree = "<group>"; };
 		8EA0783027E704D6004AB32C /* Lidear App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lidear App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0783327E704D6004AB32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA0783B27E704D6004AB32C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +116,7 @@
 		8EA0789827E71B59004AB32C /* Owl@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Owl@3x.png"; sourceTree = "<group>"; };
 		8EA0789B27E71B59004AB32C /* backdrop Observation@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backdrop Observation@3x.png"; sourceTree = "<group>"; };
 		8EA0789C27E71B59004AB32C /* Backdrop Abstract@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backdrop Abstract@3x.png"; sourceTree = "<group>"; };
-		8EA0789D27E71B59004AB32C /* Backdrop Reactiveness@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backdrop Reactiveness@3x.png"; sourceTree = "<group>"; };
+		8EA0789D27E71B59004AB32C /* Backdrop Responsiveness@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backdrop Responsiveness@3x.png"; sourceTree = "<group>"; };
 		8EA0789E27E71B59004AB32C /* Backdrop Memory@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backdrop Memory@3x.png"; sourceTree = "<group>"; };
 		8EA078A827E71B59004AB32C /* Backdrop Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backdrop Settings@3x.png"; sourceTree = "<group>"; };
 		8EA078AB27E71B59004AB32C /* Butterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Butterfly.png; sourceTree = "<group>"; };
@@ -156,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E354F1727E9B3A6003CB91A /* Manager Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8E354F1527E9AAF3003CB91A /* SKSceneAlertManager.swift */,
+			);
+			path = "Manager Classes";
+			sourceTree = "<group>";
+		};
 		8EA0782727E704D6004AB32C = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +229,7 @@
 			children = (
 				8EA0786727E70B33004AB32C /* MemoryGameScene.sks */,
 				8E354F1127E982B2003CB91A /* AbstractGameScene.sks */,
+				8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -273,7 +288,7 @@
 			children = (
 				8EA0789B27E71B59004AB32C /* backdrop Observation@3x.png */,
 				8EA0789C27E71B59004AB32C /* Backdrop Abstract@3x.png */,
-				8EA0789D27E71B59004AB32C /* Backdrop Reactiveness@3x.png */,
+				8EA0789D27E71B59004AB32C /* Backdrop Responsiveness@3x.png */,
 				8EA0789E27E71B59004AB32C /* Backdrop Memory@3x.png */,
 				8EA078A827E71B59004AB32C /* Backdrop Settings@3x.png */,
 			);
@@ -350,8 +365,8 @@
 		8EA0793227E71B94004AB32C /* Game Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E354F1727E9B3A6003CB91A /* Manager Classes */,
 				8EA0793327E71E86004AB32C /* Scene Classes */,
-				8E354F1527E9AAF3003CB91A /* SKSceneAlertManager.swift */,
 			);
 			path = "Game Classes";
 			sourceTree = "<group>";
@@ -361,6 +376,7 @@
 			children = (
 				8EA0793427E71EC3004AB32C /* MemoryGameScene.swift */,
 				8E354F1327E982BB003CB91A /* AbstractGameScene.swift */,
+				8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */,
 			);
 			path = "Scene Classes";
 			sourceTree = "<group>";
@@ -371,6 +387,7 @@
 				8EA0783B27E704D6004AB32C /* MainViewController.swift */,
 				8ECC182527E840B80050AE0C /* MemoryGameViewController.swift */,
 				8E354F0B27E98184003CB91A /* AbstractThinkingGameViewController.swift */,
+				8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */,
 			);
 			path = "View Controller Classes";
 			sourceTree = "<group>";
@@ -493,7 +510,7 @@
 				8EA0791A27E71B59004AB32C /* leaves 03@3x.png in Resources */,
 				8EA078F227E71B59004AB32C /* memory@3x.png in Resources */,
 				8E354F0927E8CCE7003CB91A /* Lidear-App-Info.plist in Resources */,
-				8EA0790127E71B59004AB32C /* Backdrop Reactiveness@3x.png in Resources */,
+				8EA0790127E71B59004AB32C /* Backdrop Responsiveness@3x.png in Resources */,
 				8EA0783F27E704D6004AB32C /* Main.storyboard in Resources */,
 				8E354F1227E982B2003CB91A /* AbstractGameScene.sks in Resources */,
 				8EA078D627E71B59004AB32C /* Reference Diagram@3x.png in Resources */,
@@ -512,6 +529,7 @@
 				8EA078D527E71B59004AB32C /* Pedal@3x.png in Resources */,
 				8EA0791227E71B59004AB32C /* apple top@3x.png in Resources */,
 				8EA0791D27E71B59004AB32C /* leaves 02@3x.png in Resources */,
+				8E354F1D27E9BF75003CB91A /* ResponsivenessGameScene.sks in Resources */,
 				8EA0784427E704D6004AB32C /* LaunchScreen.storyboard in Resources */,
 				8EA078F627E71B59004AB32C /* Level@3x.png in Resources */,
 				8EA0790027E71B59004AB32C /* Backdrop Abstract@3x.png in Resources */,
@@ -543,7 +561,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA0793527E71EC3004AB32C /* MemoryGameScene.swift in Sources */,
+				8E354F1927E9BEEE003CB91A /* ResponsivenessGameViewController.swift in Sources */,
 				8EA0783C27E704D6004AB32C /* MainViewController.swift in Sources */,
+				8E354F1B27E9BF69003CB91A /* ResponsivenessGameScene.swift in Sources */,
 				8E354F1427E982BB003CB91A /* AbstractGameScene.swift in Sources */,
 				8EA0783427E704D6004AB32C /* AppDelegate.swift in Sources */,
 				8ECC182627E840B80050AE0C /* MemoryGameViewController.swift in Sources */,
