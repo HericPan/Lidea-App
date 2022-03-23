@@ -15,6 +15,10 @@
 		8E354F1927E9BEEE003CB91A /* ResponsivenessGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */; };
 		8E354F1B27E9BF69003CB91A /* ResponsivenessGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */; };
 		8E354F1D27E9BF75003CB91A /* ResponsivenessGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */; };
+		8E354F1F27E9FC59003CB91A /* ObservationGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F1E27E9FC59003CB91A /* ObservationGameViewController.swift */; };
+		8E354F2127E9FCA0003CB91A /* ObservationGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E354F2027E9FCA0003CB91A /* ObservationGameScene.sks */; };
+		8E354F2327E9FCAB003CB91A /* ObservationGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F2227E9FCAB003CB91A /* ObservationGameScene.swift */; };
+		8E354F2727EB00FF003CB91A /* UIController Alert Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354F2627EB00FF003CB91A /* UIController Alert Manager.swift */; };
 		8EA0783427E704D6004AB32C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783327E704D6004AB32C /* AppDelegate.swift */; };
 		8EA0783C27E704D6004AB32C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0783B27E704D6004AB32C /* MainViewController.swift */; };
 		8EA0783F27E704D6004AB32C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0783D27E704D6004AB32C /* Main.storyboard */; };
@@ -88,6 +92,10 @@
 		8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivenessGameViewController.swift; sourceTree = "<group>"; };
 		8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivenessGameScene.swift; sourceTree = "<group>"; };
 		8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ResponsivenessGameScene.sks; sourceTree = "<group>"; };
+		8E354F1E27E9FC59003CB91A /* ObservationGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationGameViewController.swift; sourceTree = "<group>"; };
+		8E354F2027E9FCA0003CB91A /* ObservationGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObservationGameScene.sks; sourceTree = "<group>"; };
+		8E354F2227E9FCAB003CB91A /* ObservationGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationGameScene.swift; sourceTree = "<group>"; };
+		8E354F2627EB00FF003CB91A /* UIController Alert Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIController Alert Manager.swift"; sourceTree = "<group>"; };
 		8EA0783027E704D6004AB32C /* Lidear App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lidear App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0783327E704D6004AB32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA0783B27E704D6004AB32C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +178,14 @@
 			path = "Manager Classes";
 			sourceTree = "<group>";
 		};
+		8E354F2527EB00DC003CB91A /* Manager Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8E354F2627EB00FF003CB91A /* UIController Alert Manager.swift */,
+			);
+			path = "Manager Classes";
+			sourceTree = "<group>";
+		};
 		8EA0782727E704D6004AB32C = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +246,7 @@
 				8EA0786727E70B33004AB32C /* MemoryGameScene.sks */,
 				8E354F1127E982B2003CB91A /* AbstractGameScene.sks */,
 				8E354F1C27E9BF75003CB91A /* ResponsivenessGameScene.sks */,
+				8E354F2027E9FCA0003CB91A /* ObservationGameScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -377,6 +394,7 @@
 				8EA0793427E71EC3004AB32C /* MemoryGameScene.swift */,
 				8E354F1327E982BB003CB91A /* AbstractGameScene.swift */,
 				8E354F1A27E9BF69003CB91A /* ResponsivenessGameScene.swift */,
+				8E354F2227E9FCAB003CB91A /* ObservationGameScene.swift */,
 			);
 			path = "Scene Classes";
 			sourceTree = "<group>";
@@ -384,10 +402,12 @@
 		8ECC182427E840A20050AE0C /* View Controller Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E354F2527EB00DC003CB91A /* Manager Classes */,
 				8EA0783B27E704D6004AB32C /* MainViewController.swift */,
 				8ECC182527E840B80050AE0C /* MemoryGameViewController.swift */,
 				8E354F0B27E98184003CB91A /* AbstractThinkingGameViewController.swift */,
 				8E354F1827E9BEEE003CB91A /* ResponsivenessGameViewController.swift */,
+				8E354F1E27E9FC59003CB91A /* ObservationGameViewController.swift */,
 			);
 			path = "View Controller Classes";
 			sourceTree = "<group>";
@@ -519,6 +539,7 @@
 				8EA0793027E71B59004AB32C /* Octopus Small@3x.png in Resources */,
 				8EA0792A27E71B59004AB32C /* banana top@3x.png in Resources */,
 				8EA0792827E71B59004AB32C /* banana down@3x.png in Resources */,
+				8E354F2127E9FCA0003CB91A /* ObservationGameScene.sks in Resources */,
 				8EA0791B27E71B59004AB32C /* Leaves top@3x.png in Resources */,
 				8EA078E327E71B59004AB32C /* Rear Wheels@3x.png in Resources */,
 				8EA0791027E71B59004AB32C /* Butterfly@3x.png in Resources */,
@@ -560,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E354F2727EB00FF003CB91A /* UIController Alert Manager.swift in Sources */,
 				8EA0793527E71EC3004AB32C /* MemoryGameScene.swift in Sources */,
 				8E354F1927E9BEEE003CB91A /* ResponsivenessGameViewController.swift in Sources */,
 				8EA0783C27E704D6004AB32C /* MainViewController.swift in Sources */,
@@ -567,6 +589,8 @@
 				8E354F1427E982BB003CB91A /* AbstractGameScene.swift in Sources */,
 				8EA0783427E704D6004AB32C /* AppDelegate.swift in Sources */,
 				8ECC182627E840B80050AE0C /* MemoryGameViewController.swift in Sources */,
+				8E354F1F27E9FC59003CB91A /* ObservationGameViewController.swift in Sources */,
+				8E354F2327E9FCAB003CB91A /* ObservationGameScene.swift in Sources */,
 				8E354F1627E9AAF3003CB91A /* SKSceneAlertManager.swift in Sources */,
 				8E354F0C27E98184003CB91A /* AbstractThinkingGameViewController.swift in Sources */,
 			);
@@ -757,7 +781,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -792,7 +816,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
