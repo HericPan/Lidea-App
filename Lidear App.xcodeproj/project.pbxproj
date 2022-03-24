@@ -63,6 +63,9 @@
 		8EA0793027E71B59004AB32C /* Octopus Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA078D327E71B59004AB32C /* Octopus Small@3x.png */; };
 		8EA0793527E71EC3004AB32C /* MemoryGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0793427E71EC3004AB32C /* MemoryGameScene.swift */; };
 		8ECC182627E840B80050AE0C /* MemoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC182527E840B80050AE0C /* MemoryGameViewController.swift */; };
+		8EFC2F7227EB6DEA00CB0D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFC2F6F27EB6DEA00CB0D87 /* Assets.xcassets */; };
+		8EFC2F7327EB6DEA00CB0D87 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFC2F7027EB6DEA00CB0D87 /* playstore.png */; };
+		8EFC2F7427EB6DEA00CB0D87 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFC2F7127EB6DEA00CB0D87 /* appstore.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		8EA078D327E71B59004AB32C /* Octopus Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Octopus Small@3x.png"; sourceTree = "<group>"; };
 		8EA0793427E71EC3004AB32C /* MemoryGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameScene.swift; sourceTree = "<group>"; };
 		8ECC182527E840B80050AE0C /* MemoryGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewController.swift; sourceTree = "<group>"; };
+		8EFC2F6F27EB6DEA00CB0D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EFC2F7027EB6DEA00CB0D87 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
+		8EFC2F7127EB6DEA00CB0D87 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,7 @@
 		8EA0786927E70CD2004AB32C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8EFC2F6C27EB6C9700CB0D87 /* 0-Icons */,
 				8EA0789A27E71B59004AB32C /* 1-Backgrouds */,
 				8EA078AA27E71B59004AB32C /* 2-Butterfly */,
 				8EA0786D27E71B59004AB32C /* 3-Car */,
@@ -412,6 +419,16 @@
 			path = "View Controller Classes";
 			sourceTree = "<group>";
 		};
+		8EFC2F6C27EB6C9700CB0D87 /* 0-Icons */ = {
+			isa = PBXGroup;
+			children = (
+				8EFC2F7127EB6DEA00CB0D87 /* appstore.png */,
+				8EFC2F6F27EB6DEA00CB0D87 /* Assets.xcassets */,
+				8EFC2F7027EB6DEA00CB0D87 /* playstore.png */,
+			);
+			path = "0-Icons";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -520,6 +537,8 @@
 				8EA078E027E71B59004AB32C /* Lights@3x.png in Resources */,
 				8EA0791827E71B59004AB32C /* leaves 01@3x.png in Resources */,
 				8EA078FD27E71B59004AB32C /* Owl@3x.png in Resources */,
+				8EFC2F7227EB6DEA00CB0D87 /* Assets.xcassets in Resources */,
+				8EFC2F7427EB6DEA00CB0D87 /* appstore.png in Resources */,
 				8EA078DF27E71B59004AB32C /* Front Wheel@3x.png in Resources */,
 				8EA078FF27E71B59004AB32C /* backdrop Observation@3x.png in Resources */,
 				8EA078F827E71B59004AB32C /* Observation@3x.png in Resources */,
@@ -531,6 +550,7 @@
 				8EA078F227E71B59004AB32C /* memory@3x.png in Resources */,
 				8E354F0927E8CCE7003CB91A /* Lidear-App-Info.plist in Resources */,
 				8EA0790127E71B59004AB32C /* Backdrop Responsiveness@3x.png in Resources */,
+				8EFC2F7327EB6DEA00CB0D87 /* playstore.png in Resources */,
 				8EA0783F27E704D6004AB32C /* Main.storyboard in Resources */,
 				8E354F1227E982B2003CB91A /* AbstractGameScene.sks in Resources */,
 				8EA078D627E71B59004AB32C /* Reference Diagram@3x.png in Resources */,
@@ -773,24 +793,25 @@
 				DEVELOPMENT_TEAM = 3G7F4G8M8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lidear-App-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AliXunLianJi.Lidear-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -808,24 +829,25 @@
 				DEVELOPMENT_TEAM = 3G7F4G8M8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lidear-App-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AliXunLianJi.Lidear-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

@@ -30,7 +30,15 @@ class ResponsivenessGameScene: SKScene {
     var currentType: UInt? // 1 for octopus, 2 for butterfly
     var clickable: Bool = false // if the icon shows up, then the buttons are clickable
     var isGameOver: Bool = false
+    var userHasClickedThisRound = false
+    
+    var userWins = false
     var score = 0
+    let totalRounds = 8
+    
+    
+    var fallableRoundsCounter = 3
+    let totalFallableRounds = 3
     
     let iconInterval = 0.2 // 0.2s interval between swapping icons
     let iconRetention = 1.0 // 1s to show the icon
@@ -45,7 +53,7 @@ class ResponsivenessGameScene: SKScene {
         let startTimeDelay = iconRetention + iconInterval
         
         // start main loop for 8 times
-        for _ in 0..<8 {
+        for _ in 0..<totalRounds {
             
             
             // randomly chooose the 1 of two types and 1 of 3 spots
@@ -74,6 +82,11 @@ class ResponsivenessGameScene: SKScene {
         }
         Timer.scheduledTimer(withTimeInterval: TimeInterval(currentStartTime), repeats: false) { timer in
             self.isGameOver = true
+            // if the user wins, this executes, since the score is
+            if self.score > (self.totalRounds - self.totalFallableRounds) {
+                SKSceneAlertManager.instance.gameSucceed(scene: self)
+            }
+            
         }
     }
     
@@ -87,6 +100,8 @@ class ResponsivenessGameScene: SKScene {
     private func boxWillBeShown(chosenType: UInt, chosenSpot: UInt) {
         
         currentType = chosenType
+        
+        userHasClickedThisRound = false // reajust this to false to count this round whether user has typed
         
         let largeShownBox = self.generateSquare(width: largeBoxConfig.width, color: largeBoxConfig.shownColor, cornerRadius: largeBoxConfig.cornerRadius)
         largeShownBox.zPosition = 3
@@ -109,7 +124,7 @@ class ResponsivenessGameScene: SKScene {
         self.clickable = true
         
         self.addChild(largeShownBox)
-        chosenLargeHiddenBox?.run(SKAction.fadeOut(withDuration: TimeInterval(0.2)))
+        chosenLargeHiddenBox?.run(SKAction.fadeOut(withDuration: TimeInterval(0.05)))
         
     }
     
@@ -118,7 +133,7 @@ class ResponsivenessGameScene: SKScene {
     private func boxWillDisappear(chosenSpot: UInt) {
         
         let chosenLargeHiddenBox = self.childNode(withName: "largeHiddenBox\(chosenSpot)")
-        chosenLargeHiddenBox?.run(SKAction.fadeIn(withDuration: TimeInterval(0.2)))
+        chosenLargeHiddenBox?.run(SKAction.fadeIn(withDuration: TimeInterval(0.05)))
         
     }
     
@@ -126,10 +141,22 @@ class ResponsivenessGameScene: SKScene {
     // removing the shown box, disable the clickable
     private func boxDidDisapear() {
         
+        if !userHasClickedThisRound {
+            self.fallableRoundsCounter -= 1
+        } else {
+            score += 1
+        }
+        
+        
+        // remove current shown box
         let currentShownBox = self.childNode(withName: "currentLargeShownBox")
         currentShownBox?.removeFromParent()
         
         self.clickable = false
+            
+        
+        
+        
         
     }
     
@@ -139,19 +166,34 @@ class ResponsivenessGameScene: SKScene {
             // if self.clickable is true, means the box has been shown, and the choice of user is recognizable
             if self.currentType == chosenButtonNum {
                 // the user chosen the right number, continue the game
-                self.score += 1
-//                print(score)
             } else {
-                self.isGameOver = true
-                fullyStopAnimation()
-                SKSceneAlertManager.instance.gameOver(scene: self)
+                fallableRoundsCounter -= 1
+                
             }
-        } else {
-            self.isGameOver = true
-            fullyStopAnimation()
-            SKSceneAlertManager.instance.gameOver(scene: self, withMessage: "游戏结束，您点的太迟或太早了")
+        } else { // if the user taps on the button too early or too late
+            fallableRoundsCounter -= 1
         }
         
+    }
+    
+    private func checkGameOver() {
+        if fallableRoundsCounter <= 0 {
+            self.isGameOver = true
+            fullyStopAnimation()
+            SKSceneAlertManager.instance.gameOver(scene: self, withMessage: "游戏结束，您点错或未点三次了")
+        }
+    }
+    
+    
+    override func update(_ currentTime: TimeInterval) {
+        if !isGameOver {
+            checkGameOver()
+        }
+        
+        if isGameOver {
+            fullyStopAnimation()
+            
+        }
     }
     
     
@@ -162,14 +204,15 @@ class ResponsivenessGameScene: SKScene {
         let node3 = self.childNode(withName: "largeHiddenBox3")
         
         
-        Timer.scheduledTimer(withTimeInterval: TimeInterval(0.00001), repeats: true) { Timer in
-            node1?.removeAllActions()
-            node2?.removeAllActions()
-            node3?.removeAllActions()
-            node1?.alpha = 1
-            node2?.alpha = 1
-            node3?.alpha = 1
-        }
+        
+   
+        node1?.removeAllActions()
+        node2?.removeAllActions()
+        node3?.removeAllActions()
+        node1?.alpha = 1
+        node2?.alpha = 1
+        node3?.alpha = 1
+    
         
         
     }
@@ -285,8 +328,13 @@ class ResponsivenessGameScene: SKScene {
                 
                 let nString = String((node.name)!.last!)
                 let buttonNum = UInt(nString)!
+                
+                userHasClickedThisRound = true
+                
                 gameplayButtonCheck(chosenButtonNum: buttonNum)
             }
         }
     }
+    
+    
 }

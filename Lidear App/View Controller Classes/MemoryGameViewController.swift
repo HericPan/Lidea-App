@@ -41,4 +41,8 @@ class MemoryGameViewController: UIViewController {
             }
     
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+    }
 }

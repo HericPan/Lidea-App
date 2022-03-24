@@ -33,4 +33,8 @@ class ResponsivenessGameViewController: UIViewController {
             }
     
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+    }
 }
